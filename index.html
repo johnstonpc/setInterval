@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudar cor Auto</title>
+</head>
+<body>
+<button id="bt1">iniciar</button>
+<button id="bt2">parar</button>
+<script>
+
+    
+function mudacor (){
+
+var fundo = document.body
+
+
+var r = Math.floor(Math.random()*255)
+var g = Math.floor(Math.random()*255)
+var b = Math.floor(Math.random()*255)
+
+fundo.style.backgroundColor =`rgb(${r},${g},${b})`;
+}
+var intervalo;
+
+function iniciar (){
+    intervalo=setInterval(mudacor,500)
+}
+
+function parar (){
+    clearInterval(intervalo)
+}
+document.getElementById("bt1").addEventListener("click",iniciar)
+document.getElementById("bt2").addEventListener("click",parar)
+</script>
+</body>
+</html>
